@@ -1,0 +1,16 @@
+server:
+  port: ${port:9001}
+  
+logging:
+  level:
+    org.springframework: ERROR
+    com.felipemello: DEBUG
+    
+spring:
+  devtools:
+    restart:
+      enabled: true  
+  data:
+    mongodb:
+      uri: 'mongodb+srv://serverconnection:XeLNDTdl8tFmC2xa@mflix-jho7e.mongodb.net/test?retryWrites=true&w=majority'
+      database: ${database:rosteringsystem}
