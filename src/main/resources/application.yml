@@ -13,4 +13,4 @@ spring:
   data:
     mongodb:
       uri: 'mongodb+srv://serverconnection:XeLNDTdl8tFmC2xa@mflix-jho7e.mongodb.net/test?retryWrites=true&w=majority'
-      database: ${database:rosteringsystem}
+      database: rosteringsystem
