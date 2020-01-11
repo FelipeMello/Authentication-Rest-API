@@ -10,7 +10,6 @@ import com.felipemello.auth.models.SignUpModel;
 import com.felipemello.auth.models.User;
 import com.felipemello.auth.repositories.UserRepository;
 
-
 @Service
 public class SignupService {
 
@@ -21,12 +20,13 @@ public class SignupService {
     }
 
     public ResponseEntity<String> signUpUser(SignUpModel model) {
-	Optional<User> user = userRepository.findByEmailOrNickName(model.getEmail(), model.getNickName());
+	Optional<User> user = userRepository.findByEmailOrUsername(model.getEmail(), model.getUsername());
 
 	if (user.isPresent()) {
 	    return new ResponseEntity<>("User already exists", HttpStatus.OK);
 	}
-	userRepository.save(User.builder().email(model.getEmail()).nickName(model.getNickName()).password(model.getPassword()).build());
+	userRepository.save(User.builder().email(model.getEmail()).username(model.getUsername())
+		.password(model.getPassword()).build());
 	return new ResponseEntity<>("Signup completed", HttpStatus.ACCEPTED);
     }
 

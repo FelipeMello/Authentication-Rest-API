@@ -11,14 +11,14 @@ import lombok.Getter;
 @Data
 @Getter
 @Builder
-@Document(collection ="user")
+@Document(collection = "user")
 public class User {
 
     @Id
     private ObjectId id;
     private String email;
     private String password;
-    private String nickName;
+    private String username;
 
     public String getId() {
 	return id != null ? id.toHexString() : null;
@@ -29,4 +29,3 @@ public class User {
     }
 
 }
-
