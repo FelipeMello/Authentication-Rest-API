@@ -12,5 +12,5 @@ spring:
       enabled: true  
   data:
     mongodb:
-      uri: 'mongodb+srv://<username>:<password>@mflix-jho7e.mongodb.net/test?retryWrites=true&w=majority' 
-      database: rosteringsystem
+       uri: ${uri:mongodb+srv://<username>:<password>@mflix-jho7e.mongodb.net/test?retryWrites=true&w=majority} 
+       database: ${database:rosteringsystem}
