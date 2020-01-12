@@ -13,4 +13,4 @@ spring:
   data:
     mongodb:
        uri: ${uri:mongodb+srv://<username>:<password>@mflix-jho7e.mongodb.net/test?retryWrites=true&w=majority}  
-       database: ${database:local}
+       database: ${database:test}

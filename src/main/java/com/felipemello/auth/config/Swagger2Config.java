@@ -22,7 +22,7 @@ public class Swagger2Config {
     }
 
     private ApiInfo apiInfo() {
-	return new ApiInfo("Authentication API", "API REST for authentication", "API TOS", "Terms of service",
+	return new ApiInfo("Authentication API", "REST API for learning purposes", "API TOS", "Terms of service",
 		new Contact("Felipe Silva de Mello", "https://www.linkedin.com/in/felipemelloit",
 			"felipe.silva.mello@gmail.com"),
 		"Free API", "API URL", Collections.emptyList());

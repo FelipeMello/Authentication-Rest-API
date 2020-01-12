@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.felipemello.auth.models.SignInModel;
+import com.felipemello.auth.models.CredentialModel;
 import com.felipemello.auth.models.SignUpModel;
 import com.felipemello.auth.models.User;
 import com.felipemello.auth.services.AuthenticationService;
@@ -34,15 +34,27 @@ public class AuthenticationController {
 	this.authenticationService = signupService;
     }
 
+    @DeleteMapping("/deleteaccount")
+    public ResponseEntity<User> deleteAccount(@Valid @RequestBody CredentialModel model) {
+	return authenticationService.deleteAccount(model);
+    }
+
+    @PostMapping("/signin")
+    public ResponseEntity<User> signIn(@Valid @RequestBody CredentialModel model) {
+	return authenticationService.signIn(model);
+    }
+
     @PostMapping("/signup")
     public ResponseEntity<String> signUp(@Valid @RequestBody SignUpModel model) {
 	return authenticationService.signUpUser(model);
     }
     
-    @PostMapping("/signin")
-    public ResponseEntity<User> signIn(@Valid @RequestBody SignInModel model) {
-	return authenticationService.signIn(model);
+    @GetMapping("/user/email{email}")
+    public ResponseEntity<User> getUserByEmail(@Valid @RequestParam String email) {
+	return authenticationService.getUserByEmail(email);
     }
+    
+    
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)
