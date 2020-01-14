@@ -7,8 +7,6 @@ logging:
     com.felipemello: DEBUG
     
 spring:
-  activemq:
-    broker-url: tcp://localhost:61616
   devtools:
     restart:
       enabled: true  
@@ -17,3 +15,5 @@ spring:
 #       uri: ${uri:mongodb+srv://<username>:<password>@mflix-jho7e.mongodb.net/test?retryWrites=true&w=majority}
        uri: mongodb+srv://serverconnection:XeLNDTdl8tFmC2xa@mflix-jho7e.mongodb.net/test?retryWrites=true&w=majority  
        database: ${database:production}
+  activemq:
+    broker-url: tcp://localhost:61616

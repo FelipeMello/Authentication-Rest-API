@@ -12,7 +12,7 @@ import com.felipemello.auth.producer.Producer;
 @Configuration
 public class ProducerConfig {
 
-    @Value("${activemq.broker-url}")
+    @Value("${spring.activemq.broker-url}")
     private String brokerUrl;
 
     @Bean

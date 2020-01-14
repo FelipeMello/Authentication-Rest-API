@@ -13,7 +13,7 @@ import com.felipemello.auth.consumer.Consumer;
 @EnableJms
 public class ConsumerConfig {
 
-    @Value("${activemq.broker-url}")
+    @Value("${spring.activemq.broker-url}")
     private String brokerUrl;
 
     @Bean
