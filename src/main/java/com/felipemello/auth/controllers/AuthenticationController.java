@@ -48,13 +48,11 @@ public class AuthenticationController {
     public ResponseEntity<String> signUp(@Valid @RequestBody SignUpModel model) {
 	return authenticationService.signUpUser(model);
     }
-    
+
     @GetMapping("/user/email{email}")
     public ResponseEntity<User> getUserByEmail(@Valid @RequestParam String email) {
 	return authenticationService.getUserByEmail(email);
     }
-    
-    
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)

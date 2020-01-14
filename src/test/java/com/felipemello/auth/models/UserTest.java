@@ -53,10 +53,10 @@ public class UserTest {
     public void testViolation() {
 	model = User.builder().build();
 	Set<ConstraintViolation<User>> violations = validator.validate(model);
-	assertEquals(5, violations.size());
+	assertEquals(4, violations.size());
 	
 	Assertions.assertThat(violations).extracting("message").containsOnly("Email is mandatory", "User type is mandatory",
-		"Password is mandatory", "Username is mandatory", "Id is mandatory");
+		"Password is mandatory", "Username is mandatory");
     }
 
 }

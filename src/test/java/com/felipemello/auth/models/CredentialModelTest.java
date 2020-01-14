@@ -1,6 +1,5 @@
 package com.felipemello.auth.models;
 
-import org.assertj.core.api.Assertions;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
@@ -11,6 +10,7 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 
+import org.assertj.core.api.Assertions;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -60,5 +60,6 @@ public class CredentialModelTest {
 	Assertions.assertThat(violations).extracting("message").containsOnly("Password is mandatory");
 	
     }
-
+    
+    
 }

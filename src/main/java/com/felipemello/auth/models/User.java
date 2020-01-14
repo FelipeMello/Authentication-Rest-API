@@ -17,7 +17,6 @@ import lombok.Getter;
 @Document(collection = "user")
 public class User {
 
-    @NotNull(message = "Id is mandatory")
     @Id
     private ObjectId id;
 
